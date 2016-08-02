@@ -1,0 +1,8 @@
+@(files: List[File])
+
+@main("List of files") {
+    <h1>Files</h1>
+    <ul>
+    @files.map { file => <li>@file.name</li> }
+    </ul>
+}

@@ -1,5 +1,6 @@
 package controllers
 
+import models.File
 import play.api.mvc._
 
 object Application extends Controller {
@@ -9,6 +10,11 @@ object Application extends Controller {
   }
 
   def login = Action {
-    Ok(views.html.login("Your new application is ready."))
+    Ok(views.html.login("Try to login"))
+  }
+
+  def files = Action {
+    val files = File.getAll
+    Ok(views.html.file(files))
   }
 }
